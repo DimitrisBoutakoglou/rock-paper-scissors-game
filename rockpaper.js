@@ -1,41 +1,50 @@
 
 //Ask user to type rock paper or scissors
-function userChoice(rock, paper, scissors){
-    let choice = prompt("Choose Rock, Paper or Scissors: ");
-    return choice;
+let rock;
+let paper;
+let scissors;
+
+function userChoice(){
+
+    let input = prompt("Chooce rock, paper, or scissors: ");
+    if(input === "rock"){
+        let rock = "rock";
+        console.log(rock);
+    }
+    else if(input === "paper"){
+        let paper = "paper";
+        console.log(paper);
+    }
+    else if(input === "scissors"){
+        let scissors = "scissors";
+        console.log(scissors);
+    }
+    else console.log("Please choose between rock, paper or scissors!")
 }
-console.log(userChoice());
-
-
-/*
-//Present user's choise in the console
-console.log(userChoice());
+userChoice();
 
 //Make a random number generator
 //Assign rock-paper-scissors to the numbers
+//Present the generator's choise in the console
 function computerChoice(){
     let randomNumber = Math.random()*100+1;
 
     if(randomNumber <= 33.3333333333){
-        let rock = randomNumber
-        console.log('Rock');
+        let rock = randomNumber;
+        console.log("Rock");
+        return rock;
     }
     else if(randomNumber > 33.3333333333 && randomNumber < 66.6666666666){
-        console.log('Paper');
+        let paper = randomNumber;
+        console.log("Paper");
+        return paper;
     }
-    else console.log('Scissors');
+    else{ 
+        let randomNumber = scissors;
+        console.log('Scissors');
+        return scissors;
+        }
 }
-
-//Present the generator's choise in the console
-console.log(computerChoice());
-
-function winState(){
-    if((userChoice = "Rock") && (randomNumber = rock));
-    console.log('tie');
-}
-*/
-
-
-
+computerChoice();
 
 //Announce the winner
