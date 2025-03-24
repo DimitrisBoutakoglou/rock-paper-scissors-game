@@ -18,7 +18,7 @@ function computerChoice(){
 
 
 function getHumanChoice(){
-    let humanChoice = prompt("Choose: ")
+    let humanChoice = prompt("Choose: ").toLowerCase();
     if(humanChoice === "rock"){
         console.log("You chose rock");
         return "rock";
