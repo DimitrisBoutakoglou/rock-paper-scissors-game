@@ -1,3 +1,5 @@
+let computerScore = 0;
+let humanScore = 0;
 
 function computerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1; //epistrefei random arithmo apo 1-3
@@ -13,9 +15,7 @@ function computerChoice(){
         console.log("Computer chose scissors");
         return "scissors";
     }
-}
-
-
+};
 
 function getHumanChoice(){
     let humanChoice = prompt("Choose: ").toLowerCase();
@@ -31,30 +31,37 @@ function getHumanChoice(){
         console.log("You chose scissors");
         return "scissors";
     }
-}
+};
 
-function result(computerChoice, getHumanChoice){
+function playRound(computerChoice, getHumanChoice){
     if (computerChoice === getHumanChoice){
         return "Tie!";
     }
-    if (computerChoice=== "rock" && getHumanChoice === "paper"){
+    if (computerChoice === "rock" && getHumanChoice === "paper"){
+        humanScore++;
         return "You win! Paper beats rock!";
     }
     if(computerChoice === "rock" && getHumanChoice === "scissors"){
+        computerScore++;
         return "You lose! Rock beats scissors!";
     }
     if(computerChoice === "paper" && getHumanChoice === "rock"){
+        computerScore++;
         return "You lose! Paper beats rock!";
     }
-    if(computerChoice === "paper" && getHumanChoice === "scissors"){
+    if(computerChoice === "paper" && getHumanChoice === "scissors"){   
+        humanScore++; 
         return "You win! Scissors beats paper!";
     }
     if(computerChoice === "scissors" && getHumanChoice === "paper"){
+        computerScore++;
         return "You lose! Scissors beats paper!";
     }
     if (computerChoice === "scissors" && getHumanChoice === "rock"){
+        humanScore++;
         return "You win! Rock beats scissors!";
     }
-}
+};
 
-console.log(result (computerChoice(), getHumanChoice()));
+console.log(playRound (computerChoice(), getHumanChoice()) + "\nThe score is: " + humanScore, +computerScore);
+
