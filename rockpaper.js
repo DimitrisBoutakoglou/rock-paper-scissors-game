@@ -33,7 +33,7 @@ function getHumanChoice(){
     }
 };
 
-function playRound(computerChoice, getHumanChoice){
+function round(computerChoice, getHumanChoice){
     if (computerChoice === getHumanChoice){
         return "Tie!";
     }
@@ -63,5 +63,24 @@ function playRound(computerChoice, getHumanChoice){
     }
 };
 
-console.log(playRound (computerChoice(), getHumanChoice()) + "\nThe score is: " + humanScore, +computerScore);
+function playRound(){
+    console.log(round (computerChoice(), getHumanChoice()) + "\nThe score is: " + humanScore, +computerScore);
+}
+
+
+function playGame(){
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    if(humanScore > computerScore){
+        console.log("Congratulations. You win the game!");
+    }
+    else console.log("You lost. Better luck next time. :(");
+}
+playGame();
+
+
+//playRound(); //an to kanw playRound(computerChoice) kai meta copy pase to computerChoice kanei refresh
 
